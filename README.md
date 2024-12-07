@@ -34,7 +34,9 @@ Un slider 3D créé en HTML et CSS pur, présentant un effet de carrousel rotati
 
 html
 
-```
+
+```css
+/* Exemple de code CSS */
 
 <div class="container">
 <div class="slider">
