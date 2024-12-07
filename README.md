@@ -32,11 +32,9 @@ Un slider 3D créé en HTML et CSS pur, présentant un effet de carrousel rotati
 
 ### 1. HTML Structure
 
-html
 
-
-```css
-/* Exemple de code CSS */
+```html
+/* Exemple de code HTML */
 
 <div class="container">
 <div class="slider">
@@ -54,20 +52,21 @@ html
 
 #### Configuration de Base
 
-css
+```css
+/* Exemple de code CSS */
+
 {
 margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
 
-
+```
 
 #### Arrière-plan et Overlay
 
-css
-
-```
+```css
+/* Exemple de code CSS */
 
 body {
 background: url('/pira.jpg') no-repeat center center fixed;
@@ -83,9 +82,9 @@ background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
 #### Configuration du Slider
 
 
-css
+```css
+/* Exemple de code CSS */
 
-```
 .slider {
 width: 200px;
 height: 300px;
@@ -100,9 +99,9 @@ animation: rotate 30s linear infinite;
 Le positionnement des images utilise une combinaison de `rotateY` et `translateZ` pour créer un cercle 3D :
 
 
-css
+```css
+/* Exemple de code CSS */
 
-```
 .slider-item:nth-child(1) { transform: rotateY(0deg) translateZ(500px); }
 .slider-item:nth-child(2) { transform: rotateY(51.43deg) translateZ(500px); }
 .slider-item:nth-child(3) { transform: rotateY(102.86deg) translateZ(500px); }
@@ -122,9 +121,9 @@ css
 
 #### Effet de Survol :
 
-css
+```css
+/* Exemple de code CSS */
 
-```
 .slider-item:hover {
 transform: scale(1.3) translateZ(700px);
 filter: brightness(1.2) contrast(1.1);
@@ -136,9 +135,9 @@ z-index: 2;
 ### 4. Animation
 
 
-css
+```css
+/* Exemple de code CSS */
 
-```
 @keyframes rotate {
 from { transform: rotateY(0deg); }
 to { transform: rotateY(360deg); }
