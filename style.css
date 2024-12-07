@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('/pira.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: rotate 30s linear infinite;
+    transform-origin: center center;
+}
+
+.slider:hover {
+    animation-play-state: paused;
+}
+
+.slider-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.13, 0.9, 0.3, 1.2);
+    filter: brightness(0.8);
+    z-index: 1;
+}
+
+.slider-item:nth-child(1) { transform: rotateY(0deg) translateZ(500px); }
+.slider-item:nth-child(2) { transform: rotateY(72deg) translateZ(500px); }
+.slider-item:nth-child(3) { transform: rotateY(144deg) translateZ(500px); }
+.slider-item:nth-child(4) { transform: rotateY(216deg) translateZ(500px); }
+.slider-item:nth-child(5) { transform: rotateY(288deg) translateZ(500px); }
+
+.slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    transition: all 0.8s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.slider-item:nth-child(1):hover { transform: rotateY(0deg) translateZ(700px) scale(1.3); }
+.slider-item:nth-child(2):hover { transform: rotateY(72deg) translateZ(700px) scale(1.3); }
+.slider-item:nth-child(3):hover { transform: rotateY(144deg) translateZ(700px) scale(1.3); }
+.slider-item:nth-child(4):hover { transform: rotateY(216deg) translateZ(700px) scale(1.3); }
+.slider-item:nth-child(5):hover { transform: rotateY(288deg) translateZ(700px) scale(1.3); }
+
+.slider-item:hover {
+    cursor: pointer;
+    filter: brightness(1.2) contrast(1.1);
+    z-index: 2;
+}
+
+.slider-item:hover img {
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    filter: brightness(1.2) contrast(1.1);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
